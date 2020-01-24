@@ -1,3 +1,4 @@
+const supertest = require('supertest')
 const db = require('../config')
 const cgModel = require('./cg_model')
 
@@ -23,9 +24,9 @@ describe('cgModel', () => {
         expect(added[4].name).toBe('Lapis Lazuli')
     })
     test('remove', async () => {
-        await cgModel.remove(1)
+        const res = await cgModel.remove(1)
         const gems = await cgModel.list()
         expect(gems).toHaveLength(3)
-        console.log(gems)
+        expect(res).toBe(1)
     })
 })
