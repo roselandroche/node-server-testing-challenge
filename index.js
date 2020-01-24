@@ -1,5 +1,5 @@
 const express = require('express')
-// import model here
+// const cgModel = require('./data/crystal_gems/cg-model')
 
 const server = express()
 const port = process.env.PORT || 5000
