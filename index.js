@@ -8,7 +8,7 @@ server.use(express.json())
 
 // welcome route
 server.get('/', (req, res) => {
-    return null;
+    res.status(200).json({ message: `We are the Crystal Gems!` });
 })
 
 server.use((err, req, res, next) => {
